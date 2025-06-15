@@ -1,4 +1,3 @@
-// This file talks to GPT and returns a JSON fortune + color palette
 import { OpenAI } from "openai";
 
 const openai = new OpenAI({
