@@ -11,17 +11,22 @@ export default async function handler(req, res) {
       messages: [
         {
           role: "user",
-          content: `Give me a short JSON with:
-- a one-line fun fortune
-- a palette of 5 hex colors that match the mood
+          content: `Respond only with a valid JSON object. No backticks. No extra text.
+          
+          Return:
+          - a one-line fortune in both Korean and English (absurd, funny, and oddly specific — e.g., "비둘기 똥을 조심하세요" / "Watch out for pigeon poop today")
+          - a palette of 5 hex colors that match the mood or theme of the fortune (e.g., if the fortune is about pigeons, use colors like sky blue, gray, brown, etc.)
 
-Format:
-{
-  "fortune": "Today is made of neon dreams.",
-  "colors": ["#ff00cc", "#cc00ff", "#9900ff", "#6600cc", "#330099"]
-}`,
-        },
-      ],
+          Format:
+          {
+            "fortune_kr": "비둘기 똥을 조심하세요",
+            "fortune_en": "Watch out for pigeon poop today",
+            "colors": ["#a2d2ff", "#d3d3d3", "#6c757d", "#a0522d", "#87ceeb"]
+          }
+
+          Keep it playful, unexpected, and weirdly realistic`,
+  },
+],
       temperature: 1.2,
     });
 
