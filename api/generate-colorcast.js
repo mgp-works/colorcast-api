@@ -29,6 +29,8 @@ Format:
     const data = JSON.parse(text);
     res.status(200).json(data);
   } catch (error) {
-    res.status(500).json({ error: "Failed to generate colorcast" });
-  }
+  console.error("OpenAI API Error:", error);
+  res.status(500).json({ error: "Failed to generate colorcast", details: error.message });
 }
+}
+
